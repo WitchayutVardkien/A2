@@ -52,3 +52,38 @@ def create_queue(zone, no, name, phone, amount):
         return MediumQueue(no, name, phone, amount)
     else:
         return LargeQueue(no, name, phone, amount)
+
+def save_file():
+    """เขียนคิวทั้งหมดลงไฟล์"""
+    with open(FILE_NAME, "w", encoding="utf-8") as f:
+        for row in queues:
+            for q in row:
+                f.write(q.to_text() + "\n")
+
+
+def load_file():
+    """อ่านคิวจากไฟล์ตอนเปิดโปรแกรม แล้วรันคิวต่อ"""
+    try:
+        with open(FILE_NAME, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+    except FileNotFoundError:
+        return                     
+
+    for line in lines:
+        data = line.strip().split("|")
+        if len(data) != 4 or data[0][0] not in ZONES:
+            continue                
+        zone = ZONES.index(data[0][0])      #A=0, B=1, C=2
+        no = int(data[0][1:])               #A12=12
+        queues[zone].append(create_queue(zone, no, data[1], data[2], int(data[3])))
+        if no >= count[zone]:
+            count[zone] = no + 1            #กันเลขคิวซ้ำ
+
+
+def input_int(m):
+    """รับตัวเลข ถ้าพิมพ์ผิดให้กรอกใหม่"""
+    while True:
+        try:
+            return int(input(m))
+        except ValueError:
+            print("*** Please enter a number ***")
