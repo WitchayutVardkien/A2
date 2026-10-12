@@ -1,5 +1,3 @@
-# โปรแกรมจองคิวร้านอาหาร
-
 FILE_NAME = "queue.txt"
 ZONES = ["A", "B", "C"]      # A= 1-2 คน,B= 3-4 คน,C= 5 คนขึ้นไป
 
@@ -79,7 +77,6 @@ def load_file():
         if no >= count[zone]:
             count[zone] = no + 1            #กันเลขคิวซ้ำ
 
-
 def input_int(m):
     """รับตัวเลข ถ้าพิมพ์ผิดให้กรอกใหม่"""
     while True:
@@ -87,3 +84,84 @@ def input_int(m):
             return int(input(m))
         except ValueError:
             print("*** Please enter a number ***")
+
+def new_queue():
+    """[1] รับคิวใหม่"""
+    name = input("name: ")
+    phone = input("phone: ")
+    amount = input_int("amount: ")
+    if amount < 1:
+        print("*** Invalid amount ***\n")
+        return
+
+    zone = get_zone(amount)
+    q = create_queue(zone, count[zone], name, phone, amount)
+    count[zone] += 1
+    queues[zone].append(q)
+    save_file()
+    print(f"Queue NO: {q.queue_no}\n")
+
+def next_queue():
+    """[2] เรียกคิวถัดไปของหมวดที่เลือก"""
+    zone_name = input("zone (A/B/C): ").strip().upper()
+    if zone_name not in ZONES:
+        print("*** Zone not found ***\n")
+        return
+
+    zone = ZONES.index(zone_name)
+    if len(queues[zone]) == 0:
+        print("Queue Not Found\n")
+        return
+
+    q = queues[zone].pop(0)
+    save_file()
+    print("-> Next Queue:")
+    q.show()
+    print()
+
+def all_queue():
+    """[3] แสดงคิวทั้งหมดที่รออยู่"""
+    total = len(queues[0]) + len(queues[1]) + len(queues[2])
+    if total == 0:
+        print("Queue Not Found\n")
+        return
+
+    print("===== All Queue =====")
+    for row in queues:
+        for q in row:
+            q.show()
+    print("=====================\n")
+
+def cancel_queue():
+    """[4] ยกเลิกคิวตามหมายเลข"""
+    cancel_no = input("Queue cancel No: ").strip().upper()
+    for row in queues:
+        for i in range(len(row)):
+            if row[i].queue_no == cancel_no:
+                row.pop(i)
+                save_file()
+                print(f"-> Cancel Queue {cancel_no} Completed\n")
+                return
+    print(f"*** Queue not found {cancel_no} ***\n")
+
+# ---------- โปรแกรมหลัก ----------
+load_file()
+
+while True:
+    print("=====Menu=====\n[1] New Queue\n[2] Next Queue\n[3] All Queue\n[4] Cancel Queue\n[0] Exit")
+    menu = input_int("number: ")
+    print("==============")
+
+    if menu == 1:
+        new_queue()
+    elif menu == 2:
+        next_queue()
+    elif menu == 3:
+        all_queue()
+    elif menu == 4:
+        cancel_queue()
+    elif menu == 0:
+        print("Exit program")
+        break
+    else:
+        print("***Not Found***\n")
