@@ -52,5 +52,5 @@ Queue NO: A1
 
 ## ลิงก์
 
-- รายงานความคืบหน้า A2: -
+- รายงานความคืบหน้า A2: https://docs.google.com/document/d/1U28ygzoat0vseCNTXWwpzQCK2xLJM9zazsxMCK-c2_A/edit?usp=sharing
 - วิดีโอ Demo: -
