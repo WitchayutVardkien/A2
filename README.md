@@ -29,7 +29,7 @@
 ```
 ├── restaurant_queue.py   # โค้ดหลัก
 ├── queue.txt             # ไฟล์เก็บคิว รูปแบบ QueueNo|name|phone|amount
-├── flowchart            # รูป flowchart 3 ฟังก์ชัน(ยังไม่มี)
+├── flowchart            # รูป flowchart 3 ฟังก์ชัน
 └── README.md
 ```
 
