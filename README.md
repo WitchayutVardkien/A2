@@ -20,16 +20,23 @@
 
 ## วิธีใช้งาน
 
-- ใช้ Python 3.x.x+ ไม่ต้องติดตั้ง library เพิ่ม
-- ดาวน์โหลดโปรแกรม ดาวน์โหลดไฟล์โค้ด หรือดาวน์โหลดไฟล์ ZIP จาก Releases
-- การรันโปรแกรม:
+### 1. ติดตั้ง Python (ทำครั้งเดียว)
+- ดาวน์โหลด Python ที่เว็บ: [python.org/downloads](https://www.python.org/downloads/) แล้วกดติดตั้ง
+- *(สำคัญมาก: ตอนกดติดตั้ง ให้ติ๊กถูกที่ช่อง `Add python.exe to PATH` ด้วย)*
+### 2. ดาวน์โหลดโปรแกรม
+- กดปุ่มสีเขียว **`<> Code`** ด้านบนของ GitHub > เลือก **Download ZIP**
+- แตกไฟล์ ZIP ออกมา จะได้โฟลเดอร์ของโปรแกรม
+### 3. วิธีเปิดใช้งาน (ดับเบิ้ลคลิกได้เลย ไม่ต้องพิมพ์คำสั่ง)
+- **วิธีที่ 1 (ง่ายสุด):** ดับเบิ้ลคลิกที่ไฟล์ **`restaurant_queue.py`** หน้าต่างโปรแกรมจะเปิดขึ้นมาใช้งานได้ทันที
+- **วิธีที่ 2 (กรณีดับเบิ้ลคลิกแล้วเปิดเป็น Notepad หรือโปรแกรมอื่น):**  
+  คลิกขวาที่ไฟล์ `restaurant_queue.py` > เลือก **Open with (เปิดด้วย)** > แล้วเลือก **Python**
 
 ## โครงสร้างไฟล์
 
 ```
 ├── restaurant_queue.py   # โค้ดหลัก
 ├── queue.txt             # ไฟล์เก็บคิว รูปแบบ QueueNo|name|phone|amount
-├── flowchart            # รูป flowchart 3 ฟังก์ชัน(ยังไม่มี)
+├── flowchart            # รูป flowchart 3 ฟังก์ชัน
 └── README.md
 ```
 
@@ -52,5 +59,5 @@ Queue NO: A1
 
 ## ลิงก์
 
-- รายงานความคืบหน้า A2: -
+- รายงานความคืบหน้า A2: https://docs.google.com/document/d/1U28ygzoat0vseCNTXWwpzQCK2xLJM9zazsxMCK-c2_A/edit?usp=sharing
 - วิดีโอ Demo: -
