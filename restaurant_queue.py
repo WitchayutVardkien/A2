@@ -1,4 +1,7 @@
-FILE_NAME = "queue.txt"
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FILE_NAME = os.path.join(BASE_DIR, "queue.txt")
 ZONES = ["A", "B", "C"]      # A= 1-2 คน,B= 3-4 คน,C= 5 คนขึ้นไป
 
 class QueueItem:
