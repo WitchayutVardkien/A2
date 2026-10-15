@@ -60,4 +60,5 @@ Queue NO: A1
 ## ลิงก์
 
 - รายงานความคืบหน้า A2: https://docs.google.com/document/d/1U28ygzoat0vseCNTXWwpzQCK2xLJM9zazsxMCK-c2_A/edit?usp=sharing
-- วิดีโอ Demo: -
+- วิดีโอ Demo: https://youtu.be/07fT4IhowLI
+- Error ต่างๆที่เจอในการทำ Project: https://docs.google.com/document/d/17nOVuxUl7tvj4IJAvt9tbhWLhb1K2FKM1EZNLD58dnQ/edit?usp=sharing
