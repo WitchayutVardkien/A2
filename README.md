@@ -79,8 +79,8 @@ Queue NO: A1
 
 ```
 ├── restaurant_queue.py   # โค้ดหลัก
-├── queue.txt             # ไฟล์เก็บคิว (สร้างอัตโนมัติ)
-├── flowchart             # รูป flowchart
+├── queue.txt             # ไฟล์เก็บคิว
+├── flowchart             # รูป flowchart 3 ฟังชั่น
 └── README.md
 ```
 
